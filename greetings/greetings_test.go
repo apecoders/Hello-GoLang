@@ -24,3 +24,18 @@ func TestHelloEmpty(t *testing.T) {
 		t.Fatalf(`Hello("") = %q, %v, want "", error`, msg, err)
 	}
 }
+
+// TestIsEmailValid calls greetings.IsEmailValid with a valid email and a invalid email,
+// checking for an error.
+func TestIsEmailValid(t *testing.T) {
+	result1 := IsEmailValid("test@email.com")
+	result2 := IsEmailValid("test")
+
+	if result1 != true {
+		t.Fatalf(`IsEmailValid("test@email.com") = %v, want true`, result1)
+	}
+
+	if result2 != false {
+		t.Fatalf(`IsEmailValid("test") = %v, want false`, result2)
+	}
+}
