@@ -30,4 +30,14 @@ func main() {
 	result := greetings.IsEmailValid(email)
 	fmt.Println(result)
 
+	number := 1
+	printNumbers(number)
+
+}
+
+func printNumbers(num int) {
+	if num <= 100 {
+		fmt.Print(num, "\t")
+		printNumbers(num + 1)
+	}
 }
